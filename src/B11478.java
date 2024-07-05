@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashSet;
-import java.util.TreeSet;
 
 public class B11478 {
     public static void main(String[] args) throws IOException {
@@ -14,11 +13,8 @@ public class B11478 {
 
         for (int i = 0; i < s.length(); i++) {
             for (int j = 1; i + j <= s.length() ; j++) {
-                String tmp = s.substring(i, j + i);
-               // System.out.println(tmp);
-                hs.add(tmp);
+                hs.add(s.substring(i, j + i));
             }
-            
         }
         System.out.println(hs.size());
     }
