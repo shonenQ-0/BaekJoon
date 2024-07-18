@@ -41,14 +41,14 @@ public class B24060 {
 
     }
 
-    public static void mergeSort(int[] arr, int l, int r) {
-        if (l < r) {
-            int mid = (l + r) / 2;
+    public static void mergeSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int mid = (low + high) / 2;
 
-            mergeSort(arr, l, mid); //  좌측 분할
-            mergeSort(arr, mid + 1, r); //우측 분할
+            mergeSort(arr, low, mid); //  좌측 분할
+            mergeSort(arr, mid + 1, high); //우측 분할
 
-            merge(arr, l, mid, r); //병합
+            merge(arr, low, mid, high); //병합
 
         }
     }
@@ -76,6 +76,7 @@ public class B24060 {
 
         i = low;
         t = 0;
+
         while (i <= high){
             cnt++;
 
@@ -86,8 +87,6 @@ public class B24060 {
 
             arr[i++] = tmp[t++];
         }
-
-
     }
 }
 
